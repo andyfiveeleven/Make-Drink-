@@ -120,9 +120,14 @@ function containsAll(drink) {
 function results() {
   var newList = document.createElement('ul');
   var data = [];
-  for (var i = 0; i < displayList.length; i++) {
-    data.push('<li><a href="' + displayList[i].recLink + '">' + displayList[i].name + '</a></li>');
+  if (displayList.length === 0) {
+    data.push('<li>Sorry, nothing to make.</li>');
+  } else {
+    for (var i = 0; i < displayList.length; i++) {
+      data.push('<li><a href="' + displayList[i].recLink + '">' + displayList[i].name + '</a></li>');
+    }
   }
+
   newList.innerHTML = data.join('');
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
