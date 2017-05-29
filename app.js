@@ -74,10 +74,13 @@ new Cocktail('tom collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.
 function imgClick(e) {
   var clickedImg = e.target.getAttribute('id');
   var index = userChoices.indexOf(clickedImg);
+  console.log(clickedImg);
   if (index !== -1) {
     userChoices.splice(index, 1);
+    e.target.removeAttribute('class');
   } else {
     userChoices.push(clickedImg);
+    e.target.setAttribute('class', 'selected');
   }
   console.log(userChoices);
 }
