@@ -42,13 +42,46 @@ main  {
   outline: dotted 1px orange;
 }
 
-main img  {
+main div {
+  display: inline-block;
   width: 200px;
   height: 200px;
+  position: relative;
   margin-right: 25px;
   margin-bottom: 25px;
+}
+
+main div img {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   border: solid black 5px;
 }
+
+
+main div p{
+  position: absolute;
+  opacity: .8;
+  color: white;
+  text-align: center;
+  background-color: #222;
+  height: 0px;
+  font-size: 0px;
+  width: 100%;
+  bottom: 0px;
+  left: 5px;
+}
+
+main div:hover p {
+  height: 50px;
+  font-size: 40px;
+}
+
+main div:hover p.double {
+  font-size: 20px;
+}
+
+
 
 .selected {
   background-color: #555;
