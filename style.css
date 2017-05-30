@@ -39,10 +39,20 @@ header ul li img.social-links {
   width: 25px;
 }
 
+
+
 main  {
   width: 960px;
   margin: 0 auto;
   outline: dotted 1px orange;
+}
+
+h2  {
+  font-size: 50px;
+  text-align: center;
+  font-family: helvetica;
+  color: black;
+  margin-bottom: 20px;
 }
 
 main div {
@@ -102,6 +112,16 @@ main div:hover p.double {
   opacity: .5;
   border: solid green 5px;
 }
+#back{
+  width: 200px;
+  height: 70px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
 #rec-list li {
   height: 100px;
@@ -109,12 +129,32 @@ main div:hover p.double {
   padding-bottom: 20px;
   font-size: 50px;
   background: #bbb;
-  border: 2px solid black;
 }
 
+#rec-list li:nth-child(odd){
+  background: #ddd;
+
+}
 #rec-list li a{
   margin-left: 50px;
 }
+
+#almost-list li {
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  background: #adc9f4;
+}
+
+#almost-list li:nth-child(odd){
+  background: #73849e;
+
+}
+#almost-list li a{
+  margin-left: 50px;
+}
+
 
 footer {
   height: 300px;
