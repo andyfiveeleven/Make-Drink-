@@ -164,7 +164,22 @@ function almostResults() {
   var data = [];
   if (almost.length > 0) {
     for (var i = 0; i < almost.length; i++) {
-      data.push('<li>Almost there: <a href="' + almost[i].recLink + '" target="_blank">' + almost[i].name + '</a></li>');
+
+      var localIngred = [];
+      for(var j = 0; j <almost[i].ingredients.length; j++){
+        localIngred.push('<li>'+ almost[i].ingredients[j] + '</li>');
+      }
+      var stringIngred = localIngred.join('');
+      console.log(localIngred);
+      data.push('<li>'+
+      '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
+      '<div class="expand">'+
+      '<ul>'+
+      stringIngred +
+      '</ul>'+
+      almost[i].youTube +
+      '</div>'+
+      '</li>');
     }
   }
 
