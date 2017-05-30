@@ -1,6 +1,8 @@
 var userChoices = [];
 var cocktails = [];
 var displayList = [];
+var almost = [];
+
 var whiskey = document.getElementById('whiskey');
 var vodka = document.getElementById('vodka');
 var gin = document.getElementById('gin');
@@ -112,6 +114,10 @@ function containsAll(drink) {
   }
   if (counter === drink.ingredients.length) {
     return true;
+  } else if (counter === drink.ingredients.length - 1) {
+    almost.push(drink);
+    console.log('almost:', almost);
+    return false;
   } else {
     return false;
   }
@@ -124,19 +130,37 @@ function results() {
     data.push('<li>Sorry, nothing to make.</li>');
   } else {
     for (var i = 0; i < displayList.length; i++) {
-      data.push('<li><a href="' + displayList[i].recLink + '">' + displayList[i].name + '</a></li>');
+      data.push('<li><a href="' + displayList[i].recLink + '" target="_blank">' + displayList[i].name + '</a></li>');
     }
   }
 
   newList.innerHTML = data.join('');
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
+  almostResults();
+}
+
+function almostResults() {
+  var newList = document.createElement('ul');
+  var data = [];
+  if (almost.length > 0) {
+    for (var i = 0; i < almost.length; i++) {
+      data.push('<li>Almost there: <a href="' + almost[i].recLink + '" target="_blank">' + almost[i].name + '</a></li>');
+    }
+  }
+
+  newList.innerHTML = data.join('');
+  newList.setAttribute('id', 'almost-list');
+  canMake.appendChild(newList);
 }
 
 function backClick() {
   var list = document.getElementById('rec-list');
+  var almostList = document.getElementById('almost-list');
   canMake.removeChild(list);
+  canMake.removeChild(almostList);
   displayList = [];
+  almost = [];
 
   canMake.style.display = 'none';
   options.style.display = '';
