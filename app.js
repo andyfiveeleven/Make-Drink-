@@ -153,6 +153,8 @@ function results() {
     }
   }
 
+  data.push(almostResults());
+
   newList.innerHTML = data.join('');
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
@@ -160,7 +162,7 @@ function results() {
 }
 
 function almostResults() {
-  var newList = document.createElement('ul');
+  // var newList = document.createElement('ul');
   var data = [];
   if (almost.length > 0) {
     for (var i = 0; i < almost.length; i++) {
@@ -183,16 +185,17 @@ function almostResults() {
     }
   }
 
-  newList.innerHTML = data.join('');
-  newList.setAttribute('id', 'almost-list');
-  canMake.appendChild(newList);
+  return data.join('');
+  // newList.innerHTML = data.join('');
+  // newList.setAttribute('id', 'almost-list');
+  // canMake.appendChild(newList);
 }
 
 function backClick() {
   var list = document.getElementById('rec-list');
-  var almostList = document.getElementById('almost-list');
+  // var almostList = document.getElementById('almost-list');
   canMake.removeChild(list);
-  canMake.removeChild(almostList);
+  //canMake.removeChild(almostList);
   displayList = [];
   almost = [];
 
