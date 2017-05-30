@@ -2,6 +2,7 @@ header  {
   width: 100%;
   height: 120px;
   margin-bottom: 30px;
+  border-bottom: 2px solid black;
 }
 
 header .head-image  {
@@ -13,6 +14,7 @@ header .head-image  {
 
 header ul{
   float: right;
+  margin-top: 40px;
 }
 
 header ul li  {
@@ -20,6 +22,7 @@ header ul li  {
   margin-right: 50px;
   margin-top: 45px;
   color: #444;
+  font-size: 30px;
 }
 
 header ul li:hover {
@@ -27,14 +30,16 @@ header ul li:hover {
   margin-top: -1px;
 }
 
-header ul li.social-links {
+header ul li img.social-links {
   margin-right: 10px;
 }
 
-header ul li.social-links img {
-  height: 20px;
-  width: 20px;
+header ul li img.social-links {
+  height: 25px;
+  width: 25px;
 }
+
+
 
 main  {
   width: 960px;
@@ -42,13 +47,21 @@ main  {
   outline: dotted 1px orange;
 }
 
+h2  {
+  font-size: 50px;
+  text-align: center;
+  font-family: helvetica;
+  color: black;
+  margin-bottom: 20px;
+}
+
 main div {
   display: inline-block;
   width: 200px;
   height: 200px;
   position: relative;
-  margin-right: 25px;
-  margin-bottom: 25px;
+  margin-right: 45px;
+  margin-bottom: 35px;
 }
 
 main div img {
@@ -58,6 +71,9 @@ main div img {
   border: solid black 5px;
 }
 
+.ingredient:nth-child(4n+1) {  /* or 4n+1 */
+    margin-right: 0px;
+}
 
 main div p{
   position: absolute;
@@ -81,10 +97,131 @@ main div:hover p.double {
   font-size: 20px;
 }
 
-
+#go {
+  border: none;
+  background: black;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 40px;
+  margin-left: 380px;
+}
 
 .selected {
   background-color: #555;
   opacity: .5;
   border: solid green 5px;
+}
+#back{
+  width: 200px;
+  height: 70px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+main #can-make ul#rec-list li {
+  background: #bbb;
+}
+
+main #can-make ul#rec-list li label {
+  font-size: 60px
+}
+
+/*main #can-make ul#rec-list li div{
+  width: 100%;
+  height: 500px;
+  margin: 10px;
+  position: relative;
+}
+
+main #can-make ul#rec-list li ul {
+  font-size: 40px;
+  padding-left: 50px;
+  list-style: square;
+  width: 900px;
+}
+
+main #can-make ul#rec-list li div iframe {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  right: 40px;
+  top: 0;
+}*/
+
+/*#rec-list li {
+  height: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  background: #bbb;
+}
+
+#rec-list li a{
+  margin-left: 50px;
+}
+
+#almost-list li {
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  background: #adc9f4;
+}
+
+#almost-list li:nth-child(odd){
+  background: #73849e;
+
+}
+#almost-list li a{
+  margin-left: 50px;
+}*/
+
+label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+input {
+  opacity: 0;
+  /*visibility: hidden;*/
+}
+
+.expand {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s ease;
+  display: block;
+  width: 100%;
+}
+
+.expand ul {
+  font-size: 40px;
+  padding-left: 50px;
+  list-style: square;
+  width: 900px;
+}
+
+.expand iframe {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  right: 40px;
+  top: 0;
+}
+
+/* Display the list when input is checked */
+input:checked + .expand {
+  height: 250px;
+  margin: 10px;
+  position: relative;
+}
+
+footer {
+  height: 300px;
 }
