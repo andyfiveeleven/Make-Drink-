@@ -55,7 +55,7 @@ new Cocktail('Margarita', ['tequila', 'limes', 'orangeLiqueur'], 'http://www.ser
 
 new Cocktail('Side Car', ['brandy', 'lemons', 'orangeLiqueur'], 'http://www.seriouseats.com/recipes/2010/11/sidecar-drink-cocktail-recipe.html', 'sideCar', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('French 75', ['gin', 'champagne', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2011/03/french-75-cocktial-gin-champagne-lemon.html'), 'french75', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>';
+new Cocktail('French 75', ['gin', 'champagne', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2011/03/french-75-cocktial-gin-champagne-lemon.html', 'french75', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
 new Cocktail('Negroni', ['gin', 'sweetVermouth', 'campari'], 'http://www.seriouseats.com/recipes/2010/04/negroni-cocktail-recipe-gin-campari-vermouth.html', 'negroni', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
@@ -134,7 +134,7 @@ function results() {
       console.log(localIngred);
       data.push('<li>'+
       '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">'+
-      '<div>'+
+      '<div class="expand">'+
       '<ul>'+
       stringIngred +
       '</ul>'+

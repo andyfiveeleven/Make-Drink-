@@ -71,7 +71,7 @@ main div img {
   border: solid black 5px;
 }
 
-.ingredient:nth-child(4n) {  /* or 4n+1 */
+.ingredient:nth-child(4n+1) {  /* or 4n+1 */
     margin-right: 0px;
 }
 
@@ -131,7 +131,7 @@ main #can-make ul#rec-list li label {
   font-size: 60px
 }
 
-main #can-make ul#rec-list li div{
+/*main #can-make ul#rec-list li div{
   width: 100%;
   height: 500px;
   margin: 10px;
@@ -151,7 +151,7 @@ main #can-make ul#rec-list li div iframe {
   width: 300px;
   right: 40px;
   top: 0;
-}
+}*/
 
 /*#rec-list li {
   height: 500px;
@@ -181,6 +181,46 @@ main #can-make ul#rec-list li div iframe {
   margin-left: 50px;
 }*/
 
+label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+input {
+  opacity: 0;
+  /*visibility: hidden;*/
+}
+
+.expand {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s ease;
+  display: block;
+  width: 100%;
+}
+
+.expand ul {
+  font-size: 40px;
+  padding-left: 50px;
+  list-style: square;
+  width: 900px;
+}
+
+.expand iframe {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  right: 40px;
+  top: 0;
+}
+
+/* Display the list when input is checked */
+input:checked + .expand {
+  height: 250px;
+  margin: 10px;
+  position: relative;
+}
 
 footer {
   height: 300px;
