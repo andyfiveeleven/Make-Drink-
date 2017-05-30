@@ -123,18 +123,44 @@ main div:hover p.double {
   margin-bottom: 10px;
 }
 
-#rec-list li {
-  height: 100px;
+main #can-make ul#rec-list li {
+  background: #bbb;
+}
+
+main #can-make ul#rec-list li label {
+  font-size: 60px
+}
+
+main #can-make ul#rec-list li div{
+  width: 100%;
+  height: 500px;
+  margin: 10px;
+  position: relative;
+}
+
+main #can-make ul#rec-list li ul {
+  font-size: 40px;
+  padding-left: 50px;
+  list-style: square;
+  width: 900px;
+}
+
+main #can-make ul#rec-list li div iframe {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  right: 40px;
+  top: 0;
+}
+
+/*#rec-list li {
+  height: 500px;
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 50px;
   background: #bbb;
 }
 
-#rec-list li:nth-child(odd){
-  background: #ddd;
-
-}
 #rec-list li a{
   margin-left: 50px;
 }
@@ -153,7 +179,7 @@ main div:hover p.double {
 }
 #almost-list li a{
   margin-left: 50px;
-}
+}*/
 
 
 footer {

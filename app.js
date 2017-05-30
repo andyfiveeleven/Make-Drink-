@@ -30,46 +30,48 @@ var backBtn = document.getElementById('back');
 var options = document.getElementById('options');
 var canMake = document.getElementById('can-make');
 
-function Cocktail(name, ingredients, recLink) {
+function Cocktail(name, ingredients, recLink, recId, youTube) {
   this.name = name;
   this.ingredients = ingredients;
   this.recLink = recLink;
+  this.recId = recId;
+  this.youTube = youTube;
   cocktails.push(this);
 }
 
-new Cocktail('Manhattan', ['whiskey','sweetVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2008/01/cocktails-manhattan-recipe.html');
+new Cocktail('Manhattan', ['whiskey','sweetVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2008/01/cocktails-manhattan-recipe.html', 'manhattan', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('Old Fashioned' , ['whiskey', 'sugar', 'bitters'], 'http://www.seriouseats.com/recipes/2008/06/traditional-old-fashioned-recipe.html');   //extra? orange
+new Cocktail('Old Fashioned' , ['whiskey', 'sugar', 'bitters'], 'http://www.seriouseats.com/recipes/2008/06/traditional-old-fashioned-recipe.html', 'oldFashioned', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');   //extra? orange
 
-new Cocktail('Martinez', ['gin', 'sweetVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2011/09/martinez-cocktail-gin-cocktail-recipe.html');
+new Cocktail('Martinez', ['gin', 'sweetVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2011/09/martinez-cocktail-gin-cocktail-recipe.html', 'martinez', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('martini', ['dryVermouth', 'gin', 'bitters'], 'http://www.seriouseats.com/recipes/2010/06/the-martini-recipe.html');
+new Cocktail('Martini', ['dryVermouth', 'gin', 'bitters'], 'http://www.seriouseats.com/recipes/2010/06/the-martini-recipe.html', 'martini', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('brooklyn', ['whiskey', 'dryVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2011/02/the-brooklyn-cocktail-rye-maraschino-vermouth.html');
+new Cocktail('Brooklyn', ['whiskey', 'dryVermouth', 'bitters'], 'http://www.seriouseats.com/recipes/2011/02/the-brooklyn-cocktail-rye-maraschino-vermouth.html', 'brooklyn', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('daiquiri', ['lightRum', 'limes', 'sugar'], 'http://www.seriouseats.com/recipes/2008/05/daiquiri-recipe.html');
+new Cocktail('Daiquiri', ['lightRum', 'limes', 'sugar'], 'http://www.seriouseats.com/recipes/2008/05/daiquiri-recipe.html', 'daiquiri', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('margarita', ['tequila', 'limes', 'orangeLiqueur'], 'http://www.seriouseats.com/recipes/2015/04/classic-margarita-recipe-tequila-cocktail.html');
+new Cocktail('Margarita', ['tequila', 'limes', 'orangeLiqueur'], 'http://www.seriouseats.com/recipes/2015/04/classic-margarita-recipe-tequila-cocktail.html', 'margarita', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('side car', ['brandy', 'lemons', 'orangeLiqueur'], 'http://www.seriouseats.com/recipes/2010/11/sidecar-drink-cocktail-recipe.html');
+new Cocktail('Side Car', ['brandy', 'lemons', 'orangeLiqueur'], 'http://www.seriouseats.com/recipes/2010/11/sidecar-drink-cocktail-recipe.html', 'sideCar', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('french 75', ['gin', 'champagne', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2011/03/french-75-cocktial-gin-champagne-lemon.html');
+new Cocktail('French 75', ['gin', 'champagne', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2011/03/french-75-cocktial-gin-champagne-lemon.html'), 'french75', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>';
 
-new Cocktail('negroni', ['gin', 'sweetVermouth', 'campari'], 'http://www.seriouseats.com/recipes/2010/04/negroni-cocktail-recipe-gin-campari-vermouth.html');
+new Cocktail('Negroni', ['gin', 'sweetVermouth', 'campari'], 'http://www.seriouseats.com/recipes/2010/04/negroni-cocktail-recipe-gin-campari-vermouth.html', 'negroni', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('boulevardier', ['whiskey', 'campari', 'sweetVermouth'], 'http://www.seriouseats.com/recipes/2008/09/boulevardier-recipe.html');
+new Cocktail('Boulevardier', ['whiskey', 'campari', 'sweetVermouth'], 'http://www.seriouseats.com/recipes/2008/09/boulevardier-recipe.html', 'boulevarier', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('vieux carre', ['bitters', 'whiskey', 'brandy', 'sweetVermouth'], 'http://www.seriouseats.com/recipes/2008/07/vieux-carre-recipe.html');
+new Cocktail('Vieux Carre', ['bitters', 'whiskey', 'brandy', 'sweetVermouth'], 'http://www.seriouseats.com/recipes/2008/07/vieux-carre-recipe.html', 'vieuxCarre', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('whiskey sour', ['whiskey', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2007/10/cocktails-whiskey-sour.html');
+new Cocktail('Whiskey Sour', ['whiskey', 'lemons', 'sugar'], 'http://www.seriouseats.com/recipes/2007/10/cocktails-whiskey-sour.html', 'whiskeySour', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('planters punch', ['darkRum', 'sugar', 'limes', 'bitters'], 'http://www.seriouseats.com/recipes/2010/07/planters-punch-cocktail-recipe.html');
+new Cocktail('Planters Punch', ['darkRum', 'sugar', 'limes', 'bitters'], 'http://www.seriouseats.com/recipes/2010/07/planters-punch-cocktail-recipe.html', 'plantarsPunch', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('cosmopolitan', ['vodka', 'orangeLiqueur', 'cranberry', 'limes'], 'http://www.seriouseats.com/recipes/2011/10/how-to-make-a-cosmopolitan-cocktail-best-recipe.html');
+new Cocktail('Cosmopolitan', ['vodka', 'orangeLiqueur', 'cranberry', 'limes'], 'http://www.seriouseats.com/recipes/2011/10/how-to-make-a-cosmopolitan-cocktail-best-recipe.html', 'cosmopolitan', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('vodka cranberry', ['vodka', 'cranberry', 'clubSoda', 'limes'], 'https://www.tablespoon.com/recipes/fresh-cranberry-vodka-cocktail/f8de4d8e-d91a-4dbb-b701-9f927428f0a7');
+new Cocktail('Vodka Cranberry', ['vodka', 'cranberry', 'clubSoda', 'limes'], 'https://www.tablespoon.com/recipes/fresh-cranberry-vodka-cocktail/f8de4d8e-d91a-4dbb-b701-9f927428f0a7', 'vodkaCranberry', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('tom collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.seriouseats.com/recipes/2008/08/tom-collins-recipe.html');
+new Cocktail('tom collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.seriouseats.com/recipes/2008/08/tom-collins-recipe.html', 'tomCollins', '<iframe width="560" height="315" src="https://www.youtube.com/embed/joqDgv35w1Y" frameborder="0" allowfullscreen></iframe>');
 
 function imgClick(e) {
   var clickedImg = e.target.getAttribute('id');
@@ -124,7 +126,22 @@ function results() {
     data.push('<li>Sorry, nothing to make.</li>');
   } else {
     for (var i = 0; i < displayList.length; i++) {
-      data.push('<li><a href="' + displayList[i].recLink + '">' + displayList[i].name + '</a></li>');
+      var localIngred = [];
+      for(var j = 0; j <displayList[i].ingredients.length; j++){
+        localIngred.push('<li>'+ displayList[i].ingredients[j] + '</li>');
+      }
+      var stringIngred = localIngred.join('');
+      console.log(localIngred);
+      data.push('<li>'+
+      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">'+
+      '<div>'+
+      '<ul>'+
+      stringIngred +
+      '</ul>'+
+      displayList[i].youTube +
+      '</div>'+
+      '</li>');
+      console.log(data);
     }
   }
 
