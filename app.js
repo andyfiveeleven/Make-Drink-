@@ -73,9 +73,9 @@ new Cocktail('Cosmopolitan', ['vodka', 'orangeLiqueur', 'cranberry', 'limes'], '
 
 new Cocktail('Vodka Cranberry', ['vodka', 'cranberry', 'clubSoda', 'limes'], 'https://www.tablespoon.com/recipes/fresh-cranberry-vodka-cocktail/f8de4d8e-d91a-4dbb-b701-9f927428f0a7', 'vodkaCranberry', '<iframe width="560" height="315" src="https://www.youtube.com/embed/MKrbFTHF-Go" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('tom collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.seriouseats.com/recipes/2008/08/tom-collins-recipe.html', 'tomCollins', '<iframe width="560" height="315" src="https://www.youtube.com/embed/NGLnQxIj-P4" frameborder="0" allowfullscreen></iframe>');
+new Cocktail('Tom Collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.seriouseats.com/recipes/2008/08/tom-collins-recipe.html', 'tomCollins', '<iframe width="560" height="315" src="https://www.youtube.com/embed/NGLnQxIj-P4" frameborder="0" allowfullscreen></iframe>');
 
-new Cocktail('mojito', ['sugar', 'lightRum', 'limes', 'clubSoda', 'mint'], 'http://www.seriouseats.com/recipes/2011/10/mojito-rum-mint-cocktail-recipe.html', 'mojito', '<iframe width="560" height="315" src="https://www.youtube.com/embed/xrJsVHr7YV4?list=PLLALQuK1NDrg2D1BpRhd2N1Etf_ytM-Qq" frameborder="0" allowfullscreen></iframe>');
+new Cocktail('Mojito', ['sugar', 'lightRum', 'limes', 'clubSoda', 'mint'], 'http://www.seriouseats.com/recipes/2011/10/mojito-rum-mint-cocktail-recipe.html', 'mojito', '<iframe width="560" height="315" src="https://www.youtube.com/embed/xrJsVHr7YV4?list=PLLALQuK1NDrg2D1BpRhd2N1Etf_ytM-Qq" frameborder="0" allowfullscreen></iframe>');
 
 function imgClick(e) {
   var clickedImg = e.target.getAttribute('id');
