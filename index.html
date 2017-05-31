@@ -4,22 +4,26 @@
     <title>Test</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   </head>
   <body>
 
     <header>
-      <img src="https://c1.staticflickr.com/1/116/301447447_4ba0bbfcfd_b.jpg" class="head-image">
-      <ul>
-        <li>about</li>
-        <li><a href="#"><img src="assets/facebook.jpg" class="social-links"></a></li>
-        <li><a href="#"><img src="assets/insta.jpg" class="social-links"></a></li>
-        <li><a href="#"><img src="assets/twitter.jpg" class="social-links"></a></li>
-      </ul>
+      <div>
+        <h1 id="top">Mix It Up</h1>
+        <ul>
+          <li>about</li>
+          <li><a href="#"><img src="assets/facebook.jpg" class="social-links"></a></li>
+          <li><a href="#"><img src="assets/insta.jpg" class="social-links"></a></li>
+          <li><a href="#"><img src="assets/twitter.jpg" class="social-links"></a></li>
+        </ul>
+      </div>
     </header>
     <main>
 
     <section id="options">
-      <h2>Click on all the ingredients you have.</h2>
+      <h2>Pick your liquor, then "Mix It Up!"! </h2>
       <div class="ingredient">
         <img src="assets/whiskey.jpg" id="whiskey">
         <p>Whiskey</p>
@@ -58,7 +62,7 @@
       </div>
       <div class="ingredient double">
         <img src="assets/sweetVermouth.jpg" id="sweetVermouth">
-        <p>Sweet Vermouth</p>
+        <p class="long">Sweet Vermouth</p>
       </div>
       <div class="ingredient">
         <img src="assets/bitters.jpg" id="bitters">
@@ -66,7 +70,7 @@
       </div>
       <div class="ingredient double">
         <img src="assets/dryVermouth.jpg" id="dryVermouth">
-        <p>Dry Vermouth</p>
+        <p class="long">Dry Vermouth</p>
       </div>
       <div class="ingredient">
         <img src="assets/brandy.jpg" id="brandy">
@@ -74,7 +78,7 @@
       </div>
       <div class="ingredient double">
         <img src="assets/cointreau.jpg" id="orangeLiqueur">
-        <p>Orange Liqeur</p>
+        <p class="long">Orange Liqueur</p>
       </div>
       <div class="ingredient">
         <img src="assets/campari.jpg" id="campari">
@@ -102,14 +106,14 @@
       </div>
       <div class="ingredient">
         <img src="assets/cranberry.jpg" id="cranberry">
-        <p>Cranberry Juice</p>
+        <p class="long">Cranberry Juice</p>
       </div>
       <div class="ingredient">
         <img src="assets/clubSoda.jpeg" id="clubSoda">
         <p>Club Soda</p>
       </div>
 
-      <button id="go">GO!</button>
+      <button id="go"><a href="#top">Mix It Up!</a></button>
     </section>
 
 

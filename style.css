@@ -5,11 +5,17 @@ header  {
   border-bottom: 2px solid black;
 }
 
-header .head-image  {
-  height: 100px;
+header div  {
+  height: 120px;
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1  {
   float: left;
-  margin-left: 20px;
-  margin-top: 20px;
+  font-size: 70px;
+  margin-top: 50px;
+  font-family: 'Pacifico', cursive;
 }
 
 header ul{
@@ -19,7 +25,7 @@ header ul{
 
 header ul li  {
   display: inline-block;
-  margin-right: 50px;
+  margin-left: 50px;
   margin-top: 45px;
   color: #444;
   font-size: 30px;
@@ -49,7 +55,7 @@ main  {
 h2  {
   font-size: 50px;
   text-align: center;
-  font-family: helvetica;
+  font-family: 'Kaushan Script', cursive;
   color: black;
   margin-bottom: 20px;
 }
@@ -92,25 +98,33 @@ main div:hover p {
   font-size: 40px;
 }
 
-main div:hover p.double {
-  font-size: 20px;
+main div:hover p.long {
+  font-size: 30px;
+  margin-top: 5px;
 }
 
 #go {
   border: none;
   background: black;
   color: white;
-  width: 200px;
-  height: 50px;
+  width: 300px;
+  height: 100px;
   font-size: 40px;
-  margin-left: 380px;
+  margin-left: 330px;
+  font-family: 'Pacifico', cursive;
+}
+
+#go a {
+  text-decoration: none;
+  color: white;
 }
 
 .selected {
-  background-color: #555;
+  background-color: white;
   opacity: .5;
   border: solid green 5px;
 }
+
 #back{
   width: 200px;
   height: 70px;
@@ -120,6 +134,12 @@ main div:hover p.double {
   font-size: 40px;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.sorry  {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+  padding: 15px 10px;
 }
 
 main #can-make ul#rec-list li {
@@ -173,7 +193,7 @@ input {
 
 /* Display the list when input is checked */
 input:checked + .expand {
-  height: 250px;
+  height: 200px;
   position: relative;
 }
 
