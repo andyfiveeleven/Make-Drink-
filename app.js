@@ -2,6 +2,7 @@ var userChoices = [];
 var cocktails = [];
 var displayList = [];
 var almost = [];
+var favorites = [];
 
 var whiskey = document.getElementById('whiskey');
 var vodka = document.getElementById('vodka');
@@ -77,10 +78,14 @@ new Cocktail('Tom Collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.
 
 new Cocktail('Mojito', ['sugar', 'lightRum', 'limes', 'clubSoda', 'mint'], 'http://www.seriouseats.com/recipes/2011/10/mojito-rum-mint-cocktail-recipe.html', 'mojito', '<iframe width="560" height="315" src="https://www.youtube.com/embed/xrJsVHr7YV4?list=PLLALQuK1NDrg2D1BpRhd2N1Etf_ytM-Qq" frameborder="0" allowfullscreen></iframe>');
 
+if (localStorage.favoritesList) {
+  favorites = JSON.parse(localStorage.favoritesList);
+}
+
+
 function imgClick(e) {
   var clickedImg = e.target.getAttribute('id');
   var index = userChoices.indexOf(clickedImg);
-  console.log(clickedImg);
   if (index !== -1) {
     userChoices.splice(index, 1);
     e.target.removeAttribute('class');
@@ -88,7 +93,6 @@ function imgClick(e) {
     userChoices.push(clickedImg);
     e.target.setAttribute('class', 'selected');
   }
-  console.log(userChoices);
 }
 
 function goClick() {
@@ -96,15 +100,12 @@ function goClick() {
   options.style.display = 'none';
   canMake.style.display = '';
   results();
-  // console.log('userChoices:', userChoices);
 }
 
 function checker() {
   cocktails.forEach(function(drink) {
     if (containsAll(drink)) {
       displayList.push(drink);
-      console.log('displayList:',displayList);
-      console.log('drink:', drink);
     }
   });
 }
@@ -120,7 +121,6 @@ function containsAll(drink) {
     return true;
   } else if (counter === drink.ingredients.length - 1) {
     almost.push(drink);
-    console.log('almost:', almost);
     return false;
   } else {
     return false;
@@ -140,17 +140,16 @@ function results() {
         localIngred.push('<li>'+ displayList[i].ingredients[j] + '</li>');
       }
       var stringIngred = localIngred.join('');
-      console.log(localIngred);
       data.push('<li>'+
-      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">'+
+      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
       '<div class="expand">'+
+      '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
       displayList[i].youTube +
       '</div>'+
       '</li>');
-      console.log(data);
 
     }
   }
@@ -160,7 +159,14 @@ function results() {
   newList.innerHTML = data.join('');
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
-  almostResults();
+
+  displayList.forEach(function(drink) {
+    document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
+  });
+
+  almost.forEach(function(drink) {
+    document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
+  });
 }
 
 function almostResults() {
@@ -174,10 +180,10 @@ function almostResults() {
         localIngred.push('<li>'+ almost[i].ingredients[j] + '</li>');
       }
       var stringIngred = localIngred.join('');
-      console.log(localIngred);
       data.push('<li>'+
       '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
       '<div class="expand">'+
+      '<button id="' + almost[i].recId + 'Star">favorites</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -203,6 +209,26 @@ function backClick() {
 
   canMake.style.display = 'none';
   options.style.display = '';
+}
+
+function favoritesClick(e) {
+  var drinkName = e.target.getAttribute('id');
+  drinkName = drinkName.replace('Star', '');
+  var drinkFav;
+  cocktails.forEach(function(drink) {
+    if (drink.recId === drinkName) {
+      drinkFav = drink;
+    }
+  });
+  var index = favorites.indexOf(drinkFav);
+  if (index === -1) {
+    favorites.push(drinkFav);
+    e.target.setAttribute('class', 'clicked');
+  } else {
+    favorites.splice(index, 1);
+    e.target.removeAttribute('class');
+  }
+  localStorage.favoritesList = JSON.stringify(favorites);
 }
 
 canMake.style.display = 'none';
