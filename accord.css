@@ -1,0 +1,22 @@
+label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+ul {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s ease;
+  display: block;
+}
+
+input {
+  opacity: 0;
+  /*visibility: hidden;*/
+}
+
+/* Display the list when input is checked */
+input:checked + ul {
+  height: 100px;
+}
