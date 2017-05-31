@@ -42,8 +42,7 @@ header ul li  {
 }
 
 header ul li:hover {
-  border-bottom: black solid 1px;
-  margin-top: -1px;
+  opacity: .5;
 }
 
 header ul li img.social-links {
@@ -55,6 +54,9 @@ header ul li img.social-links {
   width: 25px;
 }
 
+body{
+
+}
 
 
 main  {
@@ -146,11 +148,6 @@ main div:hover p.long {
   margin-bottom: 10px;
 }
 
-.sorry  {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 40px;
-  padding: 15px 10px;
-}
 
 main #can-make ul#rec-list li {
   border: 4px solid black;
@@ -158,6 +155,12 @@ main #can-make ul#rec-list li {
 
 main #can-make ul#rec-list li label {
   font-size: 60px;
+}
+
+.sorry  {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+  padding: 15px 10px;
 }
 
 label {
