@@ -192,6 +192,11 @@ input {
   /*visibility: hidden;*/
 }
 
+/*This is for favorites button*/
+.clicked {
+  background-color: yellow;
+}
+
 .expand {
   height: 0;
   overflow: hidden;

@@ -140,8 +140,8 @@ function results() {
       var stringIngred = localIngred.join('');
       data.push('<li>'+
       '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
-      //'<button id="' + displayList[i].recId + 'Star"> favorites</button>' +
       '<div class="expand">'+
+      '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -157,9 +157,12 @@ function results() {
   newList.innerHTML = data.join('');
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
-  //almostResults();
 
   displayList.forEach(function(drink) {
+    document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
+  });
+
+  almost.forEach(function(drink) {
     document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
   });
 }
@@ -177,8 +180,8 @@ function almostResults() {
       var stringIngred = localIngred.join('');
       data.push('<li>'+
       '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
-      //'<button id="' + almost[i].recId + 'Star"> favorites</button>' +
       '<div class="expand">'+
+      '<button id="' + almost[i].recId + 'Star">favorites</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -206,8 +209,6 @@ function backClick() {
   options.style.display = '';
 }
 
-
-
 function favoritesClick(e) {
   var drinkName = e.target.getAttribute('id');
   drinkName = drinkName.replace('Star', '');
@@ -220,8 +221,10 @@ function favoritesClick(e) {
   var index = favorites.indexOf(drinkFav);
   if (index === -1) {
     favorites.push(drinkFav);
+    e.target.setAttribute('class', 'clicked');
   } else {
     favorites.splice(index, 1);
+    e.target.removeAttribute('class');
   }
   localStorage.favoritesList = JSON.stringify(favorites);
 }
