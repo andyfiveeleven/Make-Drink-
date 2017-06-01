@@ -144,11 +144,7 @@ function results() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<div class="recipe-head">'+
-      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
-      '<span class="plus"></span>'+
-      '<span class="minus"></span>'+
-      '</div>' +
+      '<label for="' + displayList[i].recId + '">'+'<span>' + displayList[i].name + '</span>' + '<span class="minus">-</span><span class="plus">+</span></label><input id="'+ displayList[i].recId + '" type="checkbox">' +
       '<div class="expand">'+
       '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
       '<ul>'+
