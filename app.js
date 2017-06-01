@@ -131,7 +131,7 @@ function results() {
   var newList = document.createElement('ul');
   var data = [];
   if (displayList.length === 0) {
-    data.push('<li class="sorry">Sorry, we have no recipes that exactly match your choices.</li>');
+    data.push('<li class="Sorry">Sorry, we have no recipes that exactly match your choices.</li>');
   } else {
     for (var i = 0; i < displayList.length; i++) {
 
@@ -141,7 +141,8 @@ function results() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label>' +
       '<div class="expand">'+
       '<button id="' + displayList[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
@@ -160,11 +161,22 @@ function results() {
   newList.setAttribute('id', 'rec-list');
   canMake.appendChild(newList);
 
+  var recIdArr = [];
+  favorites.forEach(function(drink) {
+    recIdArr.push(drink.recId);
+  });
+
   displayList.forEach(function(drink) {
+    if (recIdArr.includes(drink.recId)) {
+      document.getElementById(drink.recId + 'Star').setAttribute('class', 'clicked');
+    }
     document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
   });
 
   almost.forEach(function(drink) {
+    if (recIdArr.includes(drink.recId)) {
+      document.getElementById(drink.recId + 'Star').setAttribute('class', 'clicked');
+    }
     document.getElementById(drink.recId + 'Star').addEventListener('click', favoritesClick);
   });
 }
@@ -181,7 +193,8 @@ function almostResults() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + almost[i].recId + '">Almost There:  ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
+      '<input id="'+ almost[i].recId + '" type="checkbox">' +
+      '<label for="' + almost[i].recId + '">Almost There: ' + almost[i].name + '</label>'+
       '<div class="expand">'+
       '<button id="' + almost[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
@@ -215,19 +228,35 @@ function favoritesClick(e) {
   var drinkName = e.target.getAttribute('id');
   drinkName = drinkName.replace('Star', '');
   var drinkFav;
+  var addDrink;
   cocktails.forEach(function(drink) {
     if (drink.recId === drinkName) {
-      drinkFav = drink;
+      drinkFav = drink.recId;
+      addDrink = drink;
     }
   });
-  var index = favorites.indexOf(drinkFav);
-  if (index === -1) {
-    favorites.push(drinkFav);
-    e.target.setAttribute('class', 'clicked');
-  } else {
-    favorites.splice(index, 1);
-    e.target.removeAttribute('class');
+
+  var count = 0;
+  for (var i = 0; i < favorites.length; i++) {
+    //console.log('drinkFav:', drinkFav, favorites[i].recId);
+    if (favorites[i].recId === drinkFav) {
+      favorites.splice(i, 1);
+      e.target.removeAttribute('class');
+      count++;
+    }
   }
+  if (count === 0) {
+    favorites.push(addDrink);
+    e.target.setAttribute('class', 'clicked');
+  }
+  // var index = favorites.indexOf(drinkFav);
+  // if (index === -1) {
+  //   favorites.push(drinkFav);
+  //   e.target.setAttribute('class', 'clicked');
+  // } else {
+  //   favorites.splice(index, 1);
+  //   e.target.removeAttribute('class');
+  // }
   localStorage.favoritesList = JSON.stringify(favorites);
 }
 
