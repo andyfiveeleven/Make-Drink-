@@ -131,7 +131,7 @@ function results() {
   var newList = document.createElement('ul');
   var data = [];
   if (displayList.length === 0) {
-    data.push('<li class="sorry">Sorry, we have no recipes that exactly match your choices.</li>');
+    data.push('<li class="Sorry">Sorry, we have no recipes that exactly match your choices.</li>');
   } else {
     for (var i = 0; i < displayList.length; i++) {
 
@@ -141,7 +141,8 @@ function results() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label>' +
       '<div class="expand">'+
       '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
       '<ul>'+
@@ -192,7 +193,8 @@ function almostResults() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
+      '<input id="'+ almost[i].recId + '" type="checkbox">' +
+      '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label>'+
       '<div class="expand">'+
       '<button id="' + almost[i].recId + 'Star">favorites</button>' +
       '<ul>'+

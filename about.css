@@ -28,10 +28,6 @@ h1  {
   color: black;
 }
 
-h1:hover {
-  opacity: .5;
-}
-
 header ul{
   float: right;
   margin-top: 40px;
@@ -46,7 +42,8 @@ header ul li  {
 }
 
 header ul li:hover {
-  opacity: .5;
+  border-bottom: black solid 1px;
+  margin-top: -1px;
 }
 
 header ul li img.social-links {
