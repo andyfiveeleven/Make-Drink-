@@ -169,7 +169,8 @@ label {
   position: relative;
   padding: 10px;
   background: black;
-  color: white
+  color: white;
+  margin-bottom: 20px;
 }
 
 input {
@@ -188,7 +189,7 @@ input {
   text-decoration: none;
   box-shadow: none;
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   left: -10px;
   font-size: 30px;
 }
