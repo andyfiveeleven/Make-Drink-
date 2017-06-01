@@ -97,6 +97,7 @@ main div p{
   text-align: center;
   background-color: #222;
   height: 0px;
+  padding: 0px;
   font-size: 0px;
   width: 100%;
   bottom: 0px;
@@ -105,7 +106,9 @@ main div p{
 
 main div:hover p {
   height: 50px;
-  font-size: 40px;
+  padding: 15px 1px 0px 1px;
+  font-size: 35px;
+  bottom: -5px;
 }
 
 main div:hover p.long {
@@ -164,6 +167,7 @@ label {
   display: block;
   cursor: pointer;
   position: relative;
+  padding: 10px;
   background: black;
   color: white
 }
@@ -173,13 +177,33 @@ input {
   display: none;
 }
 
+.expand button {
+  border: none;
+  background: white;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 50px;
+  text-decoration: none;
+  box-shadow: none;
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  font-size: 30px;
+}
+
+.expand button:focus{
+  outline: none;
+}
 
 /*This is for favorites button*/
 .clicked {
-  background-color: yellow;
+  color: red;
 }
 
 .expand {
+  position: relative;
   height: 0;
   overflow: hidden;
   transition: height .3s ease;
@@ -223,5 +247,42 @@ input:checked ~ label::before {
 }
 
 footer {
-  height: 300px;
+  position: relative;
+  height: 200px;
+  background: black;
+  margin-top: 100px;
+}
+
+
+footer ul{
+  float: right;
+  margin-right: 40px;
+}
+
+footer ul li  {
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 45px;
+  color: #444;
+  font-size: 30px;
+}
+
+footer ul li:hover {
+  opacity: .5;
+}
+
+footer ul li img.social-links {
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+footer p {
+  position: absolute;
+  color: white;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
 }
