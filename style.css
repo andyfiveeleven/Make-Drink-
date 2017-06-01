@@ -63,6 +63,7 @@ main  {
   width: 960px;
   margin: 0 auto;
   padding-top: 150px;
+  min-height: 450px;
 }
 
 h2  {
