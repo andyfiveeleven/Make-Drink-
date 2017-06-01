@@ -78,6 +78,9 @@ new Cocktail('Tom Collins', ['gin', 'lemons', 'sugar', 'clubSoda'], 'http://www.
 
 new Cocktail('Mojito', ['sugar', 'lightRum', 'limes', 'clubSoda', 'mint'], 'http://www.seriouseats.com/recipes/2011/10/mojito-rum-mint-cocktail-recipe.html', 'mojito', '<iframe width="560" height="315" src="https://www.youtube.com/embed/xrJsVHr7YV4?list=PLLALQuK1NDrg2D1BpRhd2N1Etf_ytM-Qq" frameborder="0" allowfullscreen></iframe>');
 
+new Cocktail('BeerMosa', ['lightBeer', 'oranges'], 'https://food52.com/blog/12156-how-to-make-a-better-beermosa', 'beerMosa');
+
+
 if (localStorage.favoritesList) {
   favorites = JSON.parse(localStorage.favoritesList);
 }
@@ -141,7 +144,11 @@ function results() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
+      '<div class="recipe-head">'+
       '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<span class="plus"></span>'+
+      '<span class="minus"></span>'+
+      '</div>' +
       '<div class="expand">'+
       '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
       '<ul>'+

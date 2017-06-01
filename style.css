@@ -151,6 +151,7 @@ main div:hover p.long {
 
 main #can-make ul#rec-list li {
   border: 4px solid black;
+  position: relative;
 }
 
 main #can-make ul#rec-list li label {
@@ -163,7 +164,13 @@ main #can-make ul#rec-list li label {
   padding: 15px 10px;
 }
 
-label {
+.recipe-head {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+.recipe-head label {
   display: block;
   cursor: pointer;
   position: relative;
@@ -171,9 +178,29 @@ label {
   color: white
 }
 
-input {
+.recipe-head input {
   opacity: 0;
   /*visibility: hidden;*/
+}
+
+.plus {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  height: 30px;
+  width: 4px;
+  border-radius: 10px;
+  background: white;
+}
+
+.minus {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  width: 30px;
+  height: 4px;
+  border-radius: 10px;
+  background: white;
 }
 
 /*This is for favorites button*/
@@ -210,7 +237,7 @@ input {
 }
 
 /* Display the list when input is checked */
-input:checked + .expand {
+.recipe-head input:checked + .expand {
   height: 200px;
   position: relative;
 }
