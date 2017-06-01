@@ -131,7 +131,7 @@ function results() {
   var newList = document.createElement('ul');
   var data = [];
   if (displayList.length === 0) {
-    data.push('<li class="Sorry">Sorry, we have no recipes that exactly match your choices.</li>');
+    data.push('<li class="sorry">Sorry, we have no recipes that exactly match your choices.</li>');
   } else {
     for (var i = 0; i < displayList.length; i++) {
 
