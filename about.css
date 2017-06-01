@@ -8,6 +8,9 @@ a{
 local styles*/
 
 header  {
+  position: fixed;
+  z-index: 1000;
+  background: white;
   width: 100%;
   height: 120px;
   margin-bottom: 100px;
@@ -62,7 +65,8 @@ header ul li img.social-links {
 
 main  {
   width: 960px;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding-top: 150px;
 }
 
 section {
@@ -83,4 +87,46 @@ p   {
   height: 200px;
   font-family: 'Dosis', sans-serif;
   font-size: 30px;
+}
+
+footer {
+  position: relative;
+  height: 200px;
+  background: black;
+  margin-top: 100px;
+}
+
+
+footer ul{
+  float: right;
+  margin-right: 40px;
+}
+
+footer ul li  {
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 45px;
+  color: #444;
+  font-size: 30px;
+}
+
+footer ul li:hover {
+  opacity: .5;
+}
+
+footer ul li img.social-links {
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+footer p {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 30px;
+  bottom: 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
 }

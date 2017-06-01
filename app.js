@@ -26,6 +26,8 @@ var oranges = document.getElementById('oranges');
 var grenadine = document.getElementById('grenadine');
 var cranberry = document.getElementById('cranberry');
 var clubSoda = document.getElementById('clubSoda');
+var mint = document.getElementById('mint');
+var cola = document.getElementById('cola');
 
 var goBtn = document.getElementById('go');
 var backBtn = document.getElementById('back');
@@ -144,13 +146,11 @@ function results() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<div class="recipe-head">'+
-      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
-      '<span class="plus"></span>'+
-      '<span class="minus"></span>'+
-      '</div>' +
+
+      '<input id="'+ displayList[i].recId + '" type="checkbox">' +
+      '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label>' +
       '<div class="expand">'+
-      '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
+      '<button id="' + displayList[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -199,9 +199,10 @@ function almostResults() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
+      '<input id="'+ almost[i].recId + '" type="checkbox">' +
+      '<label for="' + almost[i].recId + '">Almost There: ' + almost[i].name + '</label>'+
       '<div class="expand">'+
-      '<button id="' + almost[i].recId + 'Star">favorites</button>' +
+      '<button id="' + almost[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -289,5 +290,7 @@ oranges.addEventListener('click', imgClick);
 grenadine.addEventListener('click', imgClick);
 cranberry.addEventListener('click', imgClick);
 clubSoda.addEventListener('click', imgClick);
+mint.addEventListener('click', imgClick);
+cola.addEventListener('click', imgClick);
 goBtn.addEventListener('click', goClick);
 backBtn.addEventListener('click', backClick);
