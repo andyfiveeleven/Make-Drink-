@@ -90,7 +90,7 @@ main div img {
   border: solid black 5px;
 }
 
-.ingredient:nth-child(4n+1) {  /* or 4n+1 */
+.ingredient:nth-child(4n+1) {
     margin-right: 0px;
 }
 
@@ -236,7 +236,6 @@ input {
   top: 0;
 }
 
-/* Display the list when input is checked */
 label::before {
   content: "+";
   float: right;
