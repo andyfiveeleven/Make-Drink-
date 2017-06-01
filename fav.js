@@ -10,7 +10,7 @@ function renderFav() {
   var newList = document.createElement('ul');
   var data = [];
   if (favorites.length === 0) {
-    data.push('<li class="Sorry">You have no favorites yet!</li>');
+    data.push('<li class="sorry">You have no favorites yet!</li>');
   } else {
     for (var i = 0; i < favorites.length; i++) {
 
