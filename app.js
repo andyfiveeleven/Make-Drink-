@@ -143,7 +143,7 @@ function results() {
       data.push('<li>'+
       '<label for="' + displayList[i].recId + '">' + displayList[i].name + '</label><input id="'+ displayList[i].recId + '" type="checkbox">' +
       '<div class="expand">'+
-      '<button id="' + displayList[i].recId + 'Star">favorites</button>' +
+      '<button id="' + displayList[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
@@ -181,9 +181,9 @@ function almostResults() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li>'+
-      '<label for="' + almost[i].recId + '">Almost: ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
+      '<label for="' + almost[i].recId + '">Almost There:  ' + almost[i].name + '</label><input id="'+ almost[i].recId + '" type="checkbox">'+
       '<div class="expand">'+
-      '<button id="' + almost[i].recId + 'Star">favorites</button>' +
+      '<button id="' + almost[i].recId + 'Star">&#9829;</button>' +
       '<ul>'+
       stringIngred +
       '</ul>'+
