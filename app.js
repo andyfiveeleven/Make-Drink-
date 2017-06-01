@@ -26,6 +26,8 @@ var oranges = document.getElementById('oranges');
 var grenadine = document.getElementById('grenadine');
 var cranberry = document.getElementById('cranberry');
 var clubSoda = document.getElementById('clubSoda');
+var mint = document.getElementById('mint');
+var cola = document.getElementById('cola');
 
 var goBtn = document.getElementById('go');
 var backBtn = document.getElementById('back');
@@ -284,5 +286,7 @@ oranges.addEventListener('click', imgClick);
 grenadine.addEventListener('click', imgClick);
 cranberry.addEventListener('click', imgClick);
 clubSoda.addEventListener('click', imgClick);
+mint.addEventListener('click', imgClick);
+cola.addEventListener('click', imgClick);
 goBtn.addEventListener('click', goClick);
 backBtn.addEventListener('click', backClick);
