@@ -20,7 +20,8 @@ function renderFav() {
       }
       var stringIngred = localIngred.join('');
       data.push('<li id="'+ favorites[i].recId + 'Li">'+
-      '<label for="' + favorites[i].recId + '">' + favorites[i].name + '</label><input id="'+ favorites[i].recId + '" type="checkbox">' +
+      '<input id="'+ favorites[i].recId + '" type="checkbox">' +
+      '<label for="' + favorites[i].recId + '">' + favorites[i].name + '</label>'+
       '<div class="expand">'+
       '<button id="' + favorites[i].recId + 'Rmv">Remove</button>' +
       '<ul>'+
