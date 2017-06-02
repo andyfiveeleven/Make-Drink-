@@ -184,7 +184,6 @@ function results() {
 }
 
 function almostResults() {
-  // var newList = document.createElement('ul');
   var data = [];
   if (almost.length > 0) {
     for (var i = 0; i < almost.length; i++) {
@@ -209,16 +208,11 @@ function almostResults() {
   }
 
   return data.join('');
-  // newList.innerHTML = data.join('');
-  // newList.setAttribute('id', 'almost-list');
-  // canMake.appendChild(newList);
 }
 
 function backClick() {
   var list = document.getElementById('rec-list');
-  // var almostList = document.getElementById('almost-list');
   canMake.removeChild(list);
-  //canMake.removeChild(almostList);
   displayList = [];
   almost = [];
 
@@ -240,7 +234,6 @@ function favoritesClick(e) {
 
   var count = 0;
   for (var i = 0; i < favorites.length; i++) {
-    //console.log('drinkFav:', drinkFav, favorites[i].recId);
     if (favorites[i].recId === drinkFav) {
       favorites.splice(i, 1);
       e.target.removeAttribute('class');
@@ -251,14 +244,7 @@ function favoritesClick(e) {
     favorites.push(addDrink);
     e.target.setAttribute('class', 'clicked');
   }
-  // var index = favorites.indexOf(drinkFav);
-  // if (index === -1) {
-  //   favorites.push(drinkFav);
-  //   e.target.setAttribute('class', 'clicked');
-  // } else {
-  //   favorites.splice(index, 1);
-  //   e.target.removeAttribute('class');
-  // }
+  
   localStorage.favoritesList = JSON.stringify(favorites);
 }
 
