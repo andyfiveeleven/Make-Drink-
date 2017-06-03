@@ -70,7 +70,7 @@ function remove(e) {
 
   if (favorites.length === 0) {
     var list = document.getElementById('rec-list');
-    list.innerHTML = '<li class="Sorry">You have no favorites yet!</li>';
+    list.innerHTML = '<li class="sorry">You have no favorites yet!</li>';
   }
 }
 
